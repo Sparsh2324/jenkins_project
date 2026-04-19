@@ -1,7 +1,7 @@
 pipeline{
 	agent any
 	parameters {
-		choice (
+		choice(
 			name: 'ENVIRONMENT',
 			choices: ['QA', 'Dev', 'PROD']
 		)
@@ -9,7 +9,7 @@ pipeline{
 	stages {
 		stage('env_print') {
 			steps{
-				echo "this deployment is for ${param.ENVIRONMENT}"
+				echo "this deployment is for ${params.ENVIRONMENT}"
 			}
 		}
 	}
