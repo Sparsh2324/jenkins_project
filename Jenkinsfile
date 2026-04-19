@@ -1,6 +1,6 @@
 pipeline{
 	agent any
-	parameter {
+	parameters {
 		choice(
 			name: 'ENVIRONMENT',
 			choices: ['QA', 'Dev', 'PROD'],
