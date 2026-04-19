@@ -1,0 +1,21 @@
+pipeline{
+	agent any
+	parameter {
+		choice (
+			name: 'ENVIRONMENT';
+			choices: ['QA', 'Dev', 'PROD'];
+		)
+	}
+	stages {
+		stage('env_print') {
+			echo "this deployment is for ${param.ENVIRONMENT}"
+		}
+		stage('pull_image') {
+			sh '''
+			docker pull node:lts-alpine3.22
+			docker image ls
+			'''
+		}
+	}
+}
+	
