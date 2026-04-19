@@ -12,13 +12,5 @@ pipeline{
 				echo "this deployment is for ${param.ENVIRONMENT}"
 			}
 		}
-		stage('pull_image') {
-			steps{
-				sh '''
-				docker pull node:lts-alpine3.22
-				docker image ls
-				'''
-			}
-		}
 	}
 }
